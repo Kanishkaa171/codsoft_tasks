@@ -1,0 +1,1064 @@
+/* =====================================================
+   NOVA® — CONTACT PAGE
+===================================================== */
+
+:root {
+    --contact-bg: #050505;
+    --contact-text: #f1f1ef;
+    --contact-muted: rgba(255,255,255,.48);
+    --contact-soft: rgba(255,255,255,.72);
+    --contact-line: rgba(255,255,255,.12);
+    --contact-line-soft: rgba(255,255,255,.07);
+
+    --contact-metal: linear-gradient(
+        110deg,
+        #707070 0%,
+        #f4f4f4 25%,
+        #858585 47%,
+        #ededed 68%,
+        #696969 100%
+    );
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.contact-page {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--contact-bg);
+    color: var(--contact-text);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.contact-hero {
+    position: relative;
+    min-height: 100vh;
+
+    padding: 145px 5vw 55px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.82) 0%,
+            rgba(0,0,0,.48) 48%,
+            rgba(0,0,0,.18) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.45) 0%,
+            rgba(0,0,0,.05) 45%,
+            rgba(0,0,0,.68) 100%
+        ),
+        url("../pictures/image 23.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-bottom: 1px solid var(--contact-line);
+}
+
+/* subtle image movement layer */
+
+.contact-hero::before {
+    content: "";
+
+    position: absolute;
+    inset: -5%;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.18),
+            transparent 65%
+        ),
+        url("../pictures/image 23.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    opacity: .72;
+
+    filter: grayscale(1) contrast(1.08);
+
+    z-index: 0;
+
+    transform: scale(1.06);
+
+    pointer-events: none;
+}
+
+/* dark overlay */
+
+.contact-hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.55) 0%,
+            transparent 35%,
+            rgba(0,0,0,.62) 100%
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* EMPTY DIV — DO NOT AFFECT LAYOUT */
+
+.contact-hero-grid {
+    display: none;
+}
+
+
+/* =====================================================
+   HERO TOP
+===================================================== */
+
+.contact-hero-top {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: .14em;
+
+    color: rgba(255,255,255,.58);
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.contact-hero-title {
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+
+    margin: auto 0;
+    padding: 75px 0;
+}
+
+.contact-title-line {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+.contact-title-line span {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(76px, 10.2vw, 170px) !important;
+
+    font-weight: 400;
+
+    line-height: .83;
+
+    letter-spacing: -.085em;
+
+    color: #f1f1ef;
+}
+
+
+/* SECOND LINE */
+
+.contact-title-indent span {
+    margin-left: clamp(45px, 10vw, 180px);
+}
+
+
+/* METALLIC THIRD LINE */
+
+.contact-title-metal span {
+    color: transparent;
+
+    background: var(--contact-metal);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+/* =====================================================
+   HERO BOTTOM
+===================================================== */
+
+.contact-hero-bottom {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    width: 100%;
+
+    gap: 50px;
+}
+
+.contact-hero-bottom p {
+    max-width: 470px;
+
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+
+    color: rgba(255,255,255,.76);
+}
+
+.contact-scroll {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    flex-shrink: 0;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .13em;
+
+    color: rgba(255,255,255,.5);
+}
+
+.contact-scroll i {
+    display: block;
+
+    width: 35px;
+    height: 1px;
+
+    background: rgba(255,255,255,.45);
+}
+
+
+/* =====================================================
+   DIRECT CONTACT
+===================================================== */
+
+.contact-direct {
+    position: relative;
+
+    padding: 145px 5vw;
+
+    border-bottom: 1px solid var(--contact-line);
+}
+
+.contact-section-label {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 85px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .14em;
+
+    color: rgba(255,255,255,.38);
+}
+
+.contact-direct-layout {
+    display: grid;
+
+    grid-template-columns: 1.15fr 1fr;
+
+    gap: 100px;
+
+    align-items: start;
+}
+
+.contact-direct-intro {
+    padding-top: 5px;
+}
+
+.contact-small {
+    display: block;
+
+    margin-bottom: 55px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .14em;
+
+    color: rgba(255,255,255,.38);
+}
+
+.contact-direct-intro h2 {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(62px, 8vw, 130px);
+
+    font-weight: 400;
+
+    line-height: .83;
+
+    letter-spacing: -.08em;
+}
+
+.contact-direct-intro h2 em {
+    color: transparent;
+
+    background: var(--contact-metal);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    font-style: normal;
+}
+
+.contact-details {
+    padding-top: 5px;
+}
+
+.contact-email {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 90px 1fr 25px;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 0 30px;
+
+    border-top: 1px solid var(--contact-line);
+
+    border-bottom: 1px solid var(--contact-line);
+
+    color: #f1f1ef;
+
+    text-decoration: none;
+
+    transition: padding .45s cubic-bezier(.77,0,.175,1);
+}
+
+.contact-email:hover {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.contact-detail-label,
+.contact-detail-row span:first-child {
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .12em;
+
+    color: rgba(255,255,255,.34);
+}
+
+.contact-detail-main {
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+
+    color: rgba(255,255,255,.8);
+}
+
+.contact-arrow {
+    font-size: 20px;
+}
+
+.contact-detail-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid var(--contact-line-soft);
+
+    font-family: "Manrope", sans-serif;
+    font-size: 12px;
+
+    color: rgba(255,255,255,.65);
+}
+
+
+/* =====================================================
+   VISUAL STUDY
+===================================================== */
+
+.contact-visual {
+    position: relative;
+
+    padding: 0 5vw 120px;
+
+    overflow: hidden;
+}
+
+.contact-visual-image {
+    position: relative;
+
+    width: 100%;
+    height: 78vh;
+
+    overflow: hidden;
+
+    background: #080808;
+}
+
+.contact-visual-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: grayscale(1) contrast(1.06);
+
+    transform: scale(1.08);
+
+    will-change: transform;
+}
+
+.contact-visual-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.05),
+            transparent 45%,
+            rgba(0,0,0,.62)
+        );
+}
+
+.contact-visual-meta {
+    display: flex;
+    justify-content: space-between;
+
+    padding-top: 16px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .13em;
+
+    color: rgba(255,255,255,.4);
+}
+
+.contact-visual-statement {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 80px;
+}
+
+.contact-visual-statement span {
+    display: block;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(65px, 9vw, 145px);
+
+    font-weight: 400;
+
+    line-height: .82;
+
+    letter-spacing: -.08em;
+}
+
+.contact-visual-statement span:nth-child(2) {
+    margin-left: clamp(40px, 10vw, 170px);
+}
+
+.contact-visual-statement span:nth-child(3) {
+    color: transparent;
+
+    background: var(--contact-metal);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
+/* =====================================================
+   PROJECT INQUIRY
+===================================================== */
+
+.contact-inquiry {
+    position: relative;
+
+    padding: 145px 5vw;
+
+    border-top: 1px solid var(--contact-line);
+    border-bottom: 1px solid var(--contact-line);
+}
+
+.inquiry-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1.1fr;
+
+    gap: 110px;
+
+    align-items: start;
+}
+
+.inquiry-intro {
+    position: sticky;
+
+    top: 120px;
+}
+
+.inquiry-intro h2 {
+    margin: 65px 0 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(58px, 7.6vw, 120px);
+
+    font-weight: 400;
+
+    line-height: .84;
+
+    letter-spacing: -.08em;
+}
+
+.inquiry-intro h2 em {
+    color: transparent;
+
+    background: var(--contact-metal);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    font-style: normal;
+}
+
+
+/* FORM */
+
+.contact-form {
+    width: 100%;
+}
+
+.form-field {
+    padding: 23px 0;
+
+    border-bottom: 1px solid var(--contact-line);
+}
+
+.form-field label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .13em;
+
+    color: rgba(255,255,255,.36);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    color: #f1f1ef;
+
+    appearance: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: rgba(255,255,255,.25);
+}
+
+.form-field select {
+    cursor: pointer;
+
+    color: rgba(255,255,255,.72);
+}
+
+.form-field select option {
+    background: #111;
+    color: #fff;
+}
+
+.form-field textarea {
+    min-height: 125px;
+
+    resize: vertical;
+}
+
+.contact-submit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+
+    margin-top: 42px;
+    padding: 19px 0;
+
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,.28);
+    border-bottom: 1px solid rgba(255,255,255,.28);
+
+    background: transparent;
+
+    color: #f1f1ef;
+
+    font-family: "DM Mono", monospace;
+    font-size: 9px;
+    letter-spacing: .13em;
+
+    cursor: pointer;
+
+    transition:
+        padding .4s cubic-bezier(.77,0,.175,1),
+        color .3s ease;
+}
+
+.contact-submit:hover {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+
+.contact-submit b {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.form-note {
+    margin: 16px 0 0;
+
+    font-family: "DM Mono", monospace;
+    font-size: 7px;
+    line-height: 1.7;
+    letter-spacing: .1em;
+
+    color: rgba(255,255,255,.28);
+}
+
+
+/* =====================================================
+   FINAL CTA
+===================================================== */
+
+.contact-final {
+    position: relative;
+
+    min-height: 78vh;
+
+    padding: 120px 5vw 90px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    border-bottom: 1px solid var(--contact-line);
+}
+
+.contact-final-grid {
+    display: none;
+}
+
+.contact-final::before {
+    content: "";
+
+    position: absolute;
+
+    width: 60vw;
+    height: 60vw;
+
+    right: -25vw;
+    top: -20vw;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.055),
+            transparent 68%
+        );
+
+    pointer-events: none;
+}
+
+.contact-final-content {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-final-content > span {
+    display: block;
+
+    margin-bottom: 75px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .13em;
+
+    color: rgba(255,255,255,.4);
+}
+
+.contact-final-content h2 {
+    margin: 0 0 100px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(65px, 9vw, 145px);
+
+    font-weight: 400;
+
+    line-height: .84;
+
+    letter-spacing: -.08em;
+}
+
+.contact-final-content h2 em {
+    color: transparent;
+
+    background: var(--contact-metal);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    font-style: normal;
+}
+
+.contact-final-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: min(520px, 100%);
+
+    padding-bottom: 17px;
+
+    border-bottom: 1px solid rgba(255,255,255,.25);
+
+    color: rgba(255,255,255,.78);
+
+    font-family: "Manrope", sans-serif;
+    font-size: 17px;
+
+    text-decoration: none;
+
+    transition:
+        padding .4s cubic-bezier(.77,0,.175,1),
+        color .3s ease;
+}
+
+.contact-final-link:hover {
+    padding-left: 8px;
+    padding-right: 8px;
+
+    color: #fff;
+}
+
+.contact-final-link b {
+    font-size: 21px;
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.contact-footer {
+    position: relative;
+
+    width: 100%;
+
+    padding: 68px 5vw 22px;
+
+    background: #050505;
+
+    color: #f1f1ef;
+
+    border-top: 1px solid rgba(255,255,255,.13);
+
+    overflow: hidden;
+}
+
+/* override old about-footer rules */
+
+.contact-footer.about-footer {
+    min-height: auto;
+    display: block;
+    margin: 0;
+}
+
+.contact-footer .footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.1fr 1.1fr 1fr;
+
+    min-height: 245px;
+
+    gap: 70px;
+}
+
+.contact-footer .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-footer .footer-label {
+    margin-bottom: 25px;
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    line-height: 1;
+
+    letter-spacing: .14em;
+
+    color: rgba(255,255,255,.34);
+}
+
+.contact-footer .footer-column a,
+.contact-footer .footer-column p {
+    margin: 0 0 12px;
+
+    font-family: "Manrope", sans-serif;
+    font-size: 14px;
+    line-height: 1.35;
+
+    color: rgba(255,255,255,.72);
+
+    text-decoration: none;
+}
+
+.contact-footer .footer-column a {
+    transition:
+        color .3s ease,
+        transform .4s cubic-bezier(.77,0,.175,1);
+}
+
+.contact-footer .footer-column a:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.contact-footer .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 17px;
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+    font-family: "DM Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .1em;
+
+    color: rgba(255,255,255,.38);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .contact-hero {
+        min-height: 100svh;
+
+        padding: 125px 25px 40px;
+
+        background-position: center center;
+    }
+
+    .contact-title-line span {
+        font-size: clamp(50px, 13vw, 82px) !important;
+        line-height: .87;
+    }
+
+    .contact-title-indent span {
+        margin-left: 28px;
+    }
+
+    .contact-hero-top {
+        font-size: 8px;
+    }
+
+    .contact-hero-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .contact-hero-bottom p {
+        max-width: 350px;
+        font-size: 13px;
+    }
+
+    .contact-direct,
+    .contact-inquiry {
+        padding: 100px 25px;
+    }
+
+    .contact-direct-layout,
+    .inquiry-layout {
+        grid-template-columns: 1fr;
+
+        gap: 75px;
+    }
+
+    .contact-direct-intro h2 {
+        font-size: clamp(54px, 15vw, 85px);
+    }
+
+    .contact-section-label {
+        margin-bottom: 60px;
+    }
+
+    .inquiry-intro {
+        position: relative;
+        top: auto;
+    }
+
+    .inquiry-intro h2 {
+        font-size: clamp(52px, 14vw, 82px);
+    }
+
+    .contact-visual {
+        padding: 0 25px 85px;
+    }
+
+    .contact-visual-image {
+        height: 62vh;
+    }
+
+    .contact-visual-statement {
+        margin-top: 60px;
+    }
+
+    .contact-visual-statement span {
+        font-size: clamp(52px, 14vw, 84px);
+    }
+
+    .contact-final {
+        min-height: 65vh;
+
+        padding: 90px 25px 75px;
+    }
+
+    .contact-final-content > span {
+        margin-bottom: 55px;
+    }
+
+    .contact-final-content h2 {
+        font-size: clamp(54px, 14vw, 86px);
+
+        margin-bottom: 75px;
+    }
+
+    .contact-footer {
+        padding: 55px 25px 20px;
+    }
+
+    .contact-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+
+        min-height: auto;
+
+        gap: 55px 35px;
+
+        padding-bottom: 55px;
+    }
+
+    .contact-footer .footer-column:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .contact-footer .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+
+        line-height: 1.5;
+    }
+}
+
+
+@media (max-width: 420px) {
+
+    .contact-title-line span {
+        font-size: 48px !important;
+    }
+
+    .contact-footer .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .contact-footer .footer-column:last-child {
+        grid-column: auto;
+    }
+}
